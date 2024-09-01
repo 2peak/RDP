@@ -73,7 +73,7 @@ else
 fi
 
 echo "We'll Installed pythonping package"
-pip3 install pythonping
+pip3 install ping3
 if [[ $? -ne 0 ]]; then
 	echo "Extension wasn't be installed"
 	exit 1
