@@ -1,5 +1,5 @@
 from ping3 import ping
-import subprocess, time, os, os.path
+import subprocess, time, os, os.path, getpass
 
 def ping_check(ip_address):
     response = ping(ip_address)
@@ -9,7 +9,7 @@ def ping_check(ip_address):
         return False
 
 def CheckNetwork():
-   AD = "192.168.1.246"
+   AD = "ad.ayinfra.com"
    response = ping_check(AD)
    if response == True:
        print("Internal Network Coneected. This Script will choose the RDP.")
@@ -39,12 +39,12 @@ def RDPIF():
 
 def LAB():
     username = input("Enter the Username :")
-    password = input("Enter The Password. :")
+    password = getpass.getpass("Enter The Password. :")
     os.system(f'xfreerdp /u:{username} /p:{password} /d:ayinfra.com /v:lab.external.com')
     
 def Finance(): 
     username = input("Enter the Username :")
-    password = input("Enter The Password. :")
+    password = getpass.getpass("Enter The Password. :")
     os.system(f'xfreerdp /u:{username} /p:{password} /d:ayinfra.com /v:finance.external.com')
     
 CheckNetwork()
