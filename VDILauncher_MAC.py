@@ -24,7 +24,7 @@ def VPN():
         print("Wireguard Configuration File wasn't Founded. This Script Will be shutdown.")
     else:
         os.system('wg-quick up wg0')
-        time.sleep(15)
+        time.sleep(10)
         CheckNetwork()
 
 def RDPIF():
